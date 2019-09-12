@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crystal Collector</title>
+    <link href="assets/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <h1>Click the Crystal Gems to fuse to my total number!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img id="steven" class="gem" src="assets/220px-Steven_Quartz_Universe.png">
+            </div>
+            <div class="col-md-6">
+                <img id="amethyst"class="gem" src="assets/Amethyst_-_S3_Tied_Hair.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img id="garnet" class="gem" src="assets/Garnet_-_Steven_Universe.png">
+            </div>
+            <div class="col-md-6">
+                <img id="pearl" class="gem" src="assets/CYM_Pearl_Request_by_RylerGamerDBS.png">
+            </div>
+        </div>
+        <div id="randomNumber"></div>
+        <div id="myTotal"></div>
+        <div id="wins"></div>
+        <div id="losses"></div>
+
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+
+
+        var myTotal  ;
+        var randomNumber = getRandomInt(30,100)
+        var wins = 0;
+        var losses = 0;
+        var garnet = Math.floor((Math.random() * 10) + 1)
+        var amethyst = Math.floor((Math.random() * 10) + 1)
+        var pearl = Math.floor((Math.random() * 10) + 1)
+        var steven = Math.floor((Math.random() * 10) + 1)
+
+
+        $("#garnet").data("count", garnet)
+        $("#amethyst").data("count", amethyst)
+        $("#pearl").data("count", pearl)
+        $("#steven").data("count", steven)
+    
+
+
+            
+
+
+        $(".gem").on("click", function () {
+            
+
+            }
+            
+
+        })
+
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+       
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+      
+        
+
+        
+
+
+
+
+    </script>
+   
+</body>
+
+</html>
