@@ -48,7 +48,7 @@
 
 
 
-        var myTotal  ;
+        var myTotal = 0 ;
         var randomNumber = getRandomInt(30,100)
         var wins = 0;
         var losses = 0;
@@ -69,12 +69,38 @@
 
 
         $(".gem").on("click", function () {
-            
+            var value = $(this).data("count");
+            if(myTotal === randomNumber) {
+                wins++;
+                var garnet = Math.floor((Math.random() * 10) + 1);
+                var amethyst = Math.floor((Math.random() * 10) + 1);
+                var pearl = Math.floor((Math.random() * 10) + 1);
+                var steven = Math.floor((Math.random() * 10) + 1);
+                var randomNumber = getRandomInt(30,100);
+                myTotal = 0;
 
             }
+            if(value < myTotal) {
+                value + myTotal;
+            }
+            if(value > myTotal) {
+                losses++;
+                var garnet = Math.floor((Math.random() * 10) + 1);
+                var amethyst = Math.floor((Math.random() * 10) + 1);
+                var pearl = Math.floor((Math.random() * 10) + 1);
+                var steven = Math.floor((Math.random() * 10) + 1);
+                var randomNumber = getRandomInt(30,100);
+                myTotal = 0;
+                
+
+            }
+
             
 
-        })
+            
+            
+
+        });
 
         function getRandomArbitrary(min, max) {
             return Math.random() * (max - min) + min;
