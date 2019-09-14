@@ -63,33 +63,40 @@
         $("#pearl").data("count", pearl)
         $("#steven").data("count", steven)
     
-
+        $("#randomNumber").text(randomNumber)
 
             
 
 
         $(".gem").on("click", function () {
             var value = $(this).data("count");
+            myTotal+=value;
+            $("#myTotal").text(myTotal);
+            
             if(myTotal === randomNumber) {
                 wins++;
-                var garnet = Math.floor((Math.random() * 10) + 1);
-                var amethyst = Math.floor((Math.random() * 10) + 1);
-                var pearl = Math.floor((Math.random() * 10) + 1);
-                var steven = Math.floor((Math.random() * 10) + 1);
-                var randomNumber = getRandomInt(30,100);
+                $("#wins").text("wins: " + wins);
+                garnet = Math.floor((Math.random() * 10) + 1);
+                amethyst = Math.floor((Math.random() * 10) + 1);
+                pearl = Math.floor((Math.random() * 10) + 1);
+                steven = Math.floor((Math.random() * 10) + 1);
+                randomNumber = getRandomInt(30,100);
+                $("#randomNumber").text(randomNumber)
                 myTotal = 0;
+                $("#myTotal").text(myTotal);
 
+
+            
             }
-            if(value < myTotal) {
-                value + myTotal;
-            }
-            if(value > myTotal) {
+            if(myTotal > randomNumber) {
                 losses++;
-                var garnet = Math.floor((Math.random() * 10) + 1);
-                var amethyst = Math.floor((Math.random() * 10) + 1);
-                var pearl = Math.floor((Math.random() * 10) + 1);
-                var steven = Math.floor((Math.random() * 10) + 1);
-                var randomNumber = getRandomInt(30,100);
+                $("#losses").text("losses: " + losses);
+                garnet = Math.floor((Math.random() * 10) + 1);
+                amethyst = Math.floor((Math.random() * 10) + 1);
+                pearl = Math.floor((Math.random() * 10) + 1);
+                steven = Math.floor((Math.random() * 10) + 1);
+                randomNumber = getRandomInt(30,100);
+                $("#randomNumber").text(randomNumber)
                 myTotal = 0;
                 
 
