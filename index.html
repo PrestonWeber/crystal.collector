@@ -19,18 +19,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img id="steven" class="gem" src="assets/220px-Steven_Quartz_Universe.png">
+                <img id="steven" class="gem" src="assets/images/220px-Steven_Quartz_Universe.png">
             </div>
             <div class="col-md-6">
-                <img id="amethyst"class="gem" src="assets/Amethyst_-_S3_Tied_Hair.png">
+                <img id="amethyst"class="gem" src="assets/images/Amethyst_-_S3_Tied_Hair.png">
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <img id="garnet" class="gem" src="assets/Garnet_-_Steven_Universe.png">
+                <img id="garnet" class="gem" src="assets/images/Garnet_-_Steven_Universe.png">
             </div>
             <div class="col-md-6">
-                <img id="pearl" class="gem" src="assets/CYM_Pearl_Request_by_RylerGamerDBS.png">
+                <img id="pearl" class="gem" src="assets/images/CYM_Pearl_Request_by_RylerGamerDBS.png">
             </div>
         </div>
         <div id="randomNumber"></div>
@@ -44,90 +44,7 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
-
-
-
-        var myTotal = 0 ;
-        var randomNumber = getRandomInt(30,100)
-        var wins = 0;
-        var losses = 0;
-        var garnet = Math.floor((Math.random() * 10) + 1)
-        var amethyst = Math.floor((Math.random() * 10) + 1)
-        var pearl = Math.floor((Math.random() * 10) + 1)
-        var steven = Math.floor((Math.random() * 10) + 1)
-
-
-        $("#garnet").data("count", garnet)
-        $("#amethyst").data("count", amethyst)
-        $("#pearl").data("count", pearl)
-        $("#steven").data("count", steven)
-    
-        $("#randomNumber").text(randomNumber)
-
-            
-
-
-        $(".gem").on("click", function () {
-            var value = $(this).data("count");
-            myTotal+=value;
-            $("#myTotal").text(myTotal);
-            
-            if(myTotal === randomNumber) {
-                wins++;
-                $("#wins").text("wins: " + wins);
-                garnet = Math.floor((Math.random() * 10) + 1);
-                amethyst = Math.floor((Math.random() * 10) + 1);
-                pearl = Math.floor((Math.random() * 10) + 1);
-                steven = Math.floor((Math.random() * 10) + 1);
-                randomNumber = getRandomInt(30,100);
-                $("#randomNumber").text(randomNumber)
-                myTotal = 0;
-                $("#myTotal").text(myTotal);
-
-
-            
-            }
-            if(myTotal > randomNumber) {
-                losses++;
-                $("#losses").text("losses: " + losses);
-                garnet = Math.floor((Math.random() * 10) + 1);
-                amethyst = Math.floor((Math.random() * 10) + 1);
-                pearl = Math.floor((Math.random() * 10) + 1);
-                steven = Math.floor((Math.random() * 10) + 1);
-                randomNumber = getRandomInt(30,100);
-                $("#randomNumber").text(randomNumber)
-                myTotal = 0;
-                
-
-            }
-
-            
-
-            
-            
-
-        });
-
-        function getRandomArbitrary(min, max) {
-            return Math.random() * (max - min) + min;
-        }
-
-       
-        function getRandomInt(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-      
-        
-
-        
-
-
-
-
-    </script>
+    <script src="assets/crystal.js"></script>
    
 </body>
 
