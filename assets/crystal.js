@@ -49,6 +49,9 @@
                 randomNumber = getRandomInt(30,100);
                 $("#randomNumber").text("My Number: " + randomNumber);
                 myTotal = 0;
+                $("#myTotal").text(myTotal);
+
+                
                 
 
             }
