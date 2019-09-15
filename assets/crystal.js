@@ -3,16 +3,17 @@
         var randomNumber = getRandomInt(30,100)
         var wins = 0;
         var losses = 0;
-        var garnet = Math.floor((Math.random() * 10) + 1)
-        var amethyst = Math.floor((Math.random() * 10) + 1)
-        var pearl = Math.floor((Math.random() * 10) + 1)
-        var steven = Math.floor((Math.random() * 10) + 1)
-
-
-        $("#garnet").data("count", garnet)
-        $("#amethyst").data("count", amethyst)
-        $("#pearl").data("count", pearl)
-        $("#steven").data("count", steven)
+        var characters = {
+            garnet: Math.floor((Math.random() * 10) + 1),
+            amethyst: Math.floor((Math.random() * 10) + 1),
+            pearl: Math.floor((Math.random() * 10) + 1),
+            steven: Math.floor((Math.random() * 10) + 1)
+        };
+        
+        Object.keys(characters).map(character => {
+            $("#" + character).data("character", character);
+        }); 
+        
     
         $("#randomNumber").text("My Number: " +randomNumber)
 
@@ -20,17 +21,17 @@
 
 
         $(".gem").on("click", function () {
-            var value = $(this).data("count");
+            var character = $(this).data("character");
+            var value = characters[character];
             myTotal+=value;
             $("#myTotal").text("My Total: " + myTotal);
             
             if(myTotal === randomNumber) {
                 wins++;
                 $("#wins").text("wins: " + wins);
-                garnet = Math.floor((Math.random() * 10) + 1);
-                amethyst = Math.floor((Math.random() * 10) + 1);
-                pearl = Math.floor((Math.random() * 10) + 1);
-                steven = Math.floor((Math.random() * 10) + 1);
+                Object.keys(characters).map(character => {
+                    characters[character] = Math.floor((Math.random() * 10) + 1);
+                }); 
                 randomNumber = getRandomInt(30,100);
                 $("#randomNumber").text("My Number: " + randomNumber);
                 myTotal = 0;
@@ -42,10 +43,9 @@
             if(myTotal > randomNumber) {
                 losses++;
                 $("#losses").text("losses: " + losses);
-                garnet = Math.floor((Math.random() * 10) + 1);
-                amethyst = Math.floor((Math.random() * 10) + 1);
-                pearl = Math.floor((Math.random() * 10) + 1);
-                steven = Math.floor((Math.random() * 10) + 1);
+                Object.keys(characters).map(character => {
+                    characters[character] = Math.floor((Math.random() * 10) + 1);
+                }); 
                 randomNumber = getRandomInt(30,100);
                 $("#randomNumber").text("My Number: " + randomNumber);
                 myTotal = 0;
