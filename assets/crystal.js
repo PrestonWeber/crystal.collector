@@ -15,7 +15,7 @@
         }); 
         
     
-        $("#randomNumber").text("My Number: " +randomNumber)
+        $("#randomNumber").text("My Number: " + randomNumber)
 
             
 
@@ -29,13 +29,7 @@
             if(myTotal === randomNumber) {
                 wins++;
                 $("#wins").text("wins: " + wins);
-                Object.keys(characters).map(character => {
-                    characters[character] = Math.floor((Math.random() * 10) + 1);
-                }); 
-                randomNumber = getRandomInt(30,100);
-                $("#randomNumber").text("My Number: " + randomNumber);
-                myTotal = 0;
-                $("#myTotal").text(myTotal);
+                reset();
 
 
             
@@ -43,13 +37,7 @@
             if(myTotal > randomNumber) {
                 losses++;
                 $("#losses").text("losses: " + losses);
-                Object.keys(characters).map(character => {
-                    characters[character] = Math.floor((Math.random() * 10) + 1);
-                }); 
-                randomNumber = getRandomInt(30,100);
-                $("#randomNumber").text("My Number: " + randomNumber);
-                myTotal = 0;
-                $("#myTotal").text(myTotal);
+                reset();
 
                 
                 
@@ -72,4 +60,13 @@
             min = Math.ceil(min);
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function reset(){
+            Object.keys(characters).map(character => {
+                characters[character] = Math.floor((Math.random() * 10) + 1);
+            }); 
+            randomNumber = getRandomInt(30,100);
+            $("#randomNumber").text("My Number: " + randomNumber);
+            myTotal = 0;
+            $("#myTotal").text(myTotal);
         }
